@@ -1,0 +1,20 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: gunet_tts
+  hparams:
+    hidden_size: 32
+    emb_size: 32
+    temporal_layers: 1
+    gnn_layers: 2
+    pooling_factor: 0.1
+    activation: 'elu'
+
+dataset:
+  connectivity:
+    layout: edge_index
+    include_self: False
+    force_symmetric: True
+
+#CUDA_VISIBLE_DEVICES=0,1,2,3 python -m experiments.run_benchmark config=default model=hier_tts dataset=la neptune.offline=False model.hparams.hidden_size=32,64,128 model.hparams.pooling_factor=0.5,0.2 forecast_reconciliation=True lam=0.1,.5 warm_up=0,5,25 hydra/launcher=joblib hydra.launcher.n_jobs=12 --multirun

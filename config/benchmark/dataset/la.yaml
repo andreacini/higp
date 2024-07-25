@@ -1,0 +1,21 @@
+# @package _global_
+
+#### Dataset params ###########################################################
+dataset:
+  name: la
+  splitting:
+    val_len: 0.1
+    test_len: 0.2
+  connectivity:
+    method: distance
+    threshold: 0.1
+    include_self: False
+    layout: edge_index
+
+#### Windowing params #########################################################
+window: 12
+horizon: 12
+stride: 1
+
+scale_target: False
+mask_as_exog: True

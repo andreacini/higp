@@ -1,0 +1,16 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: gated_conv_tts
+  hparams:
+    hidden_size: 64
+    emb_size: 32
+    temporal_layers: 1
+    gnn_layers: 2
+    activation: 'elu'
+
+dataset:
+  connectivity:
+    layout: edge_index
+    include_self: False

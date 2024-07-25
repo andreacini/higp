@@ -1,0 +1,29 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: higp_tts
+  hparams:
+    hidden_size: 32
+    emb_size: 32
+    temporal_layers: 1
+    gnn_layers: 2
+    levels: 3
+    n_clusters: 20
+    activation: 'elu'
+    single_sample: True
+    skip_connection: False
+    mode: gated
+    temp_decay: 0.99995
+
+dataset:
+  connectivity:
+    layout: edge_index
+    include_self: False
+    force_symmetric: True
+
+forecast_reconciliation: True
+beta: 1.
+lam: 0.25
+warm_up: -1
+reconciliation_start_epoch: -1

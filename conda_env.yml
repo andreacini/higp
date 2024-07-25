@@ -1,0 +1,32 @@
+name: higp
+channels:
+  - pytorch
+#  - nvidia                    # remove for cpu installation
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch=2.1
+#  - pytorch-cuda=12.1         # remove for cpu installation
+  - lightning=2.1
+  - numpy<2.0
+  - pyg=2.4
+  - pytorch-cluster
+  - pytorch-scatter
+  - pytorch-sparse
+  - pip
+  - pip:
+      - einops
+      - hydra-core
+      - lightning
+      - numpy>1.20.3
+      - omegaconf
+      - pandas>=1.4
+      - PyYAML
+      - scikit-learn
+      - scipy
+      - tables
+      - torchmetrics>=0.7
+      - tqdm
+      - tensorboard

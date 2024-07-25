@@ -1,0 +1,17 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: gconv_tts
+  hparams:
+    hidden_size: 64
+    emb_size: 32
+    temporal_layers: 1
+    gnn_layers: 2
+    activation: 'elu'
+    norm: 'mean'
+
+dataset:
+  connectivity:
+    layout: csr
+    include_self: False

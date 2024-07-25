@@ -1,0 +1,23 @@
+defaults:
+  - optimizer: lr_default
+  - dataset: la
+  - model: hier_tts
+  - _self_
+
+hydra:
+  sweep:
+    dir: logs/hier/${now:%Y-%m-%d-%H-%M-%S}
+    subdir: ${model.name}/${dataset.name}/${hydra.job.num}
+
+workers: 0
+num_threads: 1
+
+#### Training params ##########################################################
+epochs: 200
+train_batches: 300
+patience: 50
+batch_size: 64
+add_exogenous: True
+
+grad_clip_val: 5
+scale_axis: graph
